@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "target": "esnext",
+    "isolatedModules": true,
     "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -11,8 +12,10 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
+    "outDir": "./dist",
+    "forceConsistentCasingInFileNames": true,
     "paths": {
-      "~/*": ["src/*"]
+      "@/*": ["src/*"]
     },
     "skipLibCheck": true
   },

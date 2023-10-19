@@ -21,6 +21,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@/": `${pathSrc}/`,
+      "~/": `${pathSrc}/`,
     },
   },
   css: {

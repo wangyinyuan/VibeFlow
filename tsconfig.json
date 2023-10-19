@@ -15,7 +15,8 @@
     "outDir": "./dist",
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "~/*": ["src/*"],
     },
     "skipLibCheck": true
   },

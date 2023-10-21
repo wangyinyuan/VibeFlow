@@ -44,7 +44,13 @@
             </div>
           </div>
           <!-- 进度条 -->
-          <div class="music-player-progress"></div>
+          <div class="music-player-progress">
+            <p class="total-time">3:40</p>
+            <div class="progress-bar">
+              <div class="progress-current"></div>
+            </div>
+            <p class="current-time">2:45</p>
+          </div>
         </div>
       </div>
     </main>
@@ -97,7 +103,7 @@
           d="M19.84 22.336v0c-0.896 0-1.6-0.704-1.6-1.6v-9.472c0-0.896 0.704-1.6 1.6-1.6v0c0.896 0 1.6 0.704 1.6 1.6v9.504c0 0.864-0.704 1.568-1.6 1.568z"
         ></path>
       </symbol>
-      <symbol id="icon-play">
+      <symbol id="icon-play" viewBox="0 0 32 32">
         <title>icon-play</title>
 
         <path
@@ -157,10 +163,15 @@
 
   .music-player-card-container {
     position: absolute;
-    bottom: 1rem;
+    bottom: 0.8rem;
     left: calc(50% - 13rem);
+    color: $text-gray;
+    font-size: 0.9rem;
+    font-weight: 600;
     .music-player-card {
       position: relative;
+      display: flex;
+      gap: 1rem;
       width: 26rem;
       height: 7rem;
       border-radius: 1rem;
@@ -169,6 +180,7 @@
       //album cover
       .card-left {
         position: relative;
+        flex: 1;
 
         .album-cover {
           position: absolute;
@@ -214,25 +226,87 @@
         }
       }
       .card-right {
+        flex: 3;
+
+        padding: 0.7rem 1rem 0.7rem 2rem;
+
+        .album-info {
+          display: flex;
+          flex-flow: column wrap;
+          gap: 0.4rem;
+          width: 11rem;
+          height: 3rem;
+          overflow: hidden;
+          .album-singer {
+            font-weight: 300;
+          }
+          .album-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+          }
+        }
+
         .music-player-controls {
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          position: absolute;
+          top: 0.7rem;
+          right: 1rem;
+          width: 5rem;
+          height: calc(7rem - 1.4rem);
+          .icon {
+            display: inline-block;
+            width: 1.2rem;
+            height: 1.2rem;
+            stroke-width: 0;
+            stroke: currentColor;
+            fill: currentColor;
+          }
+
           .functions {
             display: flex;
-            position: fixed;
-            top: 0;
-            left: 50%;
-            gap: 1rem;
-
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.3rem;
             .function {
-              color: #acb8cc;
-              .icon {
-                display: inline-block;
-                width: 1.2rem;
-                height: 1.2rem;
-                stroke-width: 0;
-                stroke: currentColor;
-                fill: currentColor;
-              }
+              color: $icon-gray;
+              height: 1.2rem;
             }
+          }
+
+          .play {
+            position: relative;
+            color: $icon-white;
+            height: 100%;
+            width: 100%;
+            .icon {
+              position: absolute;
+              width: 2.5rem;
+              height: 2.5rem;
+            }
+          }
+        }
+        .music-player-progress {
+          display: flex;
+          flex-direction: column;
+          row-gap: 0.2rem;
+          width: 14rem;
+          p {
+            color: $text-gray-lighter;
+          }
+          .total-time {
+            text-align: right;
+          }
+          .current-time {
+            font-size: 0.8rem;
+          }
+          .progress-bar {
+            position: relative;
+            height: 6px;
+            background-color: $progress-background;
+            width: 100%;
+            border-radius: 10px;
           }
         }
       }

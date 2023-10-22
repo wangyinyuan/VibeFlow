@@ -39,7 +39,7 @@
               </div>
             </div>
             <div class="play">
-              <svg class="icon"><use xlink:href="#icon-pause"></use></svg>
+              <svg class="icon" v-show="false"><use xlink:href="#icon-pause"></use></svg>
               <svg class="icon"><use xlink:href="#icon-play"></use></svg>
             </div>
           </div>
@@ -157,7 +157,7 @@
 .music-player-container {
   position: relative;
 
-  background: url('@/assets/bgPicture/cool-background(2).png') no-repeat center / cover;
+  background: url('@/assets/bgPicture/awesomebg.png') no-repeat center / cover;
   height: 100vh;
   width: 100vw;
 
